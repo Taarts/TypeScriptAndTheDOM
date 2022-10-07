@@ -4,7 +4,6 @@ import './style.css'
 let currentPlayer: 'X' | 'O' = 'X' //first click is always an 'X'
 let moveCounter = 0
 // const firstListItem = document.querySelector('li')
-
 // generic and works for ANY 'li'
 //
 // because the event tells us the TARGET
