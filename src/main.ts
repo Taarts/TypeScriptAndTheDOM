@@ -9,6 +9,10 @@ let moveCounter = 0
 // because the event tells us the TARGET
 // target is the thing we clicked on
 function handleClickSquare(event: MouseEvent) {
+  // console.log(event)
+  event.stopPropagation() //after this handler, stop the bubbling up the chain
+
+  event.preventDefault() // Don't do you'r natural behaviour... override
   const thingClickedOn = event.target
 
   // If the thing clicked on is an LI Element
@@ -43,9 +47,14 @@ function handleClickSquare(event: MouseEvent) {
 }
 // firstListItem?.addEventListener('click', handleClickSquare)
 
-const allSquares = document.querySelectorAll('li')
+// const allSquares = document.querySelectorAll('li')
 
-allSquares.forEach((square) =>
-  square.addEventListener('click', handleClickSquare)
-)
-// console.log(allSquares)
+// allSquares.forEach((square) =>
+//   square.addEventListener('click', handleClickSquare)
+// )
+
+const gameBoard = document.querySelector('ul')
+
+if (gameBoard instanceof HTMLUListElement) {
+  gameBoard?.addEventListener('click', handleClickSquare)
+}
