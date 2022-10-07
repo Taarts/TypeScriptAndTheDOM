@@ -1,4 +1,8 @@
 import './style.css'
+// | this was const
+// |
+// v                v defines the string can ONLY be these two choices
+let currentPlayer: 'X' | 'O' = 'X'
 
 // const firstListItem = document.querySelector('li')
 
@@ -16,7 +20,17 @@ function handleClickSquare(event: MouseEvent) {
   //      the thingClickedOn is an LI element, and thus we can
   //      change its textContent
   if (thingCLickedOn instanceof HTMLLIElement) {
-    thingCLickedOn.textContent = 'X'
+    thingCLickedOn.textContent = currentPlayer //<--- this was 'X
+
+    // add class="taken" to show the user = "cursor: not allowed" in css
+    // they can't select this element again
+    thingCLickedOn.classList.add('taken')
+
+    if (currentPlayer === 'X') {
+      currentPlayer = 'O'
+    } else {
+      currentPlayer = 'X'
+    }
   }
 }
 // firstListItem?.addEventListener('click', handleClickSquare)
