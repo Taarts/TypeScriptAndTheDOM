@@ -1,9 +1,8 @@
 import './style.css'
 // | this was const
-// |
-// v                v defines the string can ONLY be these two choices
-let currentPlayer: 'X' | 'O' = 'X'
-
+// v                vvvvvvvv defines the string can ONLY be these two choices
+let currentPlayer: 'X' | 'O' = 'X' //first click is always an 'X'
+let moveCounter = 0
 // const firstListItem = document.querySelector('li')
 
 // generic and works for ANY 'li'
@@ -24,6 +23,11 @@ function handleClickSquare(event: MouseEvent) {
       console.log('No way José')
       return //<-- prevents the program from moving forward & gives us a msg in the console IF
       // clicked on when the square is already populated
+    }
+    moveCounter++
+    const header = document.querySelector('h1')
+    if (header instanceof HTMLHeadingElement) {
+      header.textContent = `Move ${moveCounter} of Tic Tac Toe`
     }
     thingClickedOn.textContent = currentPlayer //<--- this was 'X
 
