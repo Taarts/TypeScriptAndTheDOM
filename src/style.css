@@ -1,12 +1,12 @@
 :root {
   /* CSS Variables for all the font colors and sizes. Try changing these! */
   --header-background: #5661b3;
-  --header-text-color: #fff9c2;
+  --header-text-color: #180e33;
   --header-font-size: 2rem;
   --square-font-size: calc(8 * var(--header-font-size));
   --square-text-color: #5661b3;
-  --square-background-color: #e6e8ff;
-  --square-border: 3px solid var(--square-text-color);
+  --square-background-color: #d5cbf3;
+  --square-border: 3px solid var(--header-background);
   font: 16px / 1 sans-serif;
 }
 html {
@@ -73,6 +73,7 @@ ul li {
   min-height: 10rem;
 }
 
+/* styles that will only appear in the main.ts */
 ul li.taken {
   cursor: not-allowed;
 }
