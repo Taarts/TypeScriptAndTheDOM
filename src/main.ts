@@ -27,7 +27,7 @@ function handleClickSquare(event: MouseEvent) {
       return //<-- prevents the program from moving forward & gives us a msg in the console IF
       // clicked on when the square is already populated
     }
-    moveCounter++
+    moveCounter++ //could be for adding to scoreboard
     const header = document.querySelector('h1')
     if (header instanceof HTMLHeadingElement) {
       header.textContent = `Move ${moveCounter} of Tic Tac Toe`
@@ -52,7 +52,7 @@ function handleClickSquare(event: MouseEvent) {
 // allSquares.forEach((square) =>
 //   square.addEventListener('click', handleClickSquare)
 // )
-
+// vv event targets the "parent" of the unordered list not li's
 const gameBoard = document.querySelector('ul')
 
 if (gameBoard instanceof HTMLUListElement) {
